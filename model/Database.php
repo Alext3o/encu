@@ -16,10 +16,10 @@
 class Database {
 
     //Propiedades estaticas con la informacion de la conexion (DSN):
-    private static $dbName = 'encuesta';
-    private static $dbHost = 'localhost';
-    private static $dbUsername = 'root';
-    private static $dbUserPassword = '';
+    private static $dbName = 'postgres';
+    private static $dbHost = 'encu.postgres.database.azure.com';
+    private static $dbUsername = 'alext30@encu';
+    private static $dbUserPassword = 'Joca2000';
     //Propiedad para control de la conexion:
     private static $conexion = null;
 
