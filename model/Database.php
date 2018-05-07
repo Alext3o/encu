@@ -16,11 +16,11 @@
 class Database {
 
     //Propiedades estaticas con la informacion de la conexion (DSN):
-    private static $dbName = 'postgres';
-    private static $dbHost = 'encu.postgres.database.azure.com';
-    private static $dbUsername = 'alext30@encu';
-    private static $dbUserPassword = 'Joca2000';
-    private static $port='5432';
+    private static $dbName = 'encuesta';
+    private static $dbHost = 'mydemoservergaby.postgres.database.azure.com';
+    private static $port = '5432';
+    private static $dbUsername = 'myadminga@mydemoservergaby';
+    private static $dbUserPassword = 'Cat221995';
     //Propiedad para control de la conexion:
     private static $conexion = null;
 
@@ -40,7 +40,7 @@ class Database {
         // Una sola conexion para toda la aplicacion (singleton):
         if (null == self::$conexion) {
             try {
-                self::$conexion = new PDO("posgresql:host=" . self::$dbHost . ";"."$port" .self::$port. ";" . "dbname=" . self::$dbName, self::$dbUsername, self::$dbUserPassword);
+                self::$conexion = new PDO("pgsql:host=" . self::$dbHost . ";"."port=".self::$port .";". "dbname=" . self::$dbName, self::$dbUsername, self::$dbUserPassword);
             } catch (PDOException $e) {
                 die($e->getMessage());
             }
