@@ -19,9 +19,8 @@ switch($opcion){
         $listado = $gastosModel->getEncuesta();
         //y los guardamos en sesion:
         $_SESSION['listado'] = serialize($listado);
-        printr($listado);
         //redireccionamos a la pagina index para visualizar:
-       //header('Location: ../view/index.php');
+       header('Location: ../view/index.php');
         break;
     
     case "insertar":
