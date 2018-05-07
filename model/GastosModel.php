@@ -17,10 +17,11 @@ class GastosModel {
     public function getEncuesta(){
         //obtenemos la informacion de la bdd:
         $pdo = Database::connect();
-        $sql = "select * from dencuesta order by numero_encuesta asc";
+        $sql = "select * from dencuesta";
         $resultado = $pdo->query($sql);
         //transformamos los registros en objetos de tipo Factura:
         $listado = array();
+        
         foreach ($resultado as $res){ // le transforma de filas a objetos
             $encuesta = new Encuesta($res['numero_encuesta'],$res['edad'],$res['sexo'],$res['tipo_de_ingreso'],$res['nivel_de_educacion']);
             array_push($listado, $encuesta);
